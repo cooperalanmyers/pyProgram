@@ -35,7 +35,7 @@ class Breakout():
         batrect = batrect.move((width / 2) - (batrect.right / 2), height - 20)
         ballrect = ballrect.move(width / 2, height / 2)       
         xspeed = horizontalSpeed
-        yspeed = yspeed_init
+        yspeed = verticalSpeed
         lives = max_lives
         clock = pygame.time.Clock()
         pygame.key.set_repeat(1,30)       
