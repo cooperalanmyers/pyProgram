@@ -21,15 +21,12 @@ class Breakout():
         screen = pygame.display.set_mode(size)
         #screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
 
-        GameBar = pygame.image.load("GameBar.png").convert()
+        bat = pygame.image.load("GameBar.png").convert()
         batrect = bat.get_rect()
 
         ball = pygame.image.load("Ball1.png").convert()
         # ball.set_colorkey((255, 255, 255))
-        ballrect = ball.get_rect()
-       
-        pong = pygame.mixer.Sound('Blip_1-Surround-147.wav')
-        pong.set_volume(10)        
+        ballrect = ball.get_rect()        
         
         wall = Wall()
         wall.build_wall(width)
