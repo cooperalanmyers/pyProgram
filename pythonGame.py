@@ -19,7 +19,7 @@ class Breakout():
         max_lives = 3
         score = 0
         
-        bgcolour = 0x2F, 0x4F, 0x4F  # darkslategrey        
+        background = 0xFF, 0x00, 0x00  # Red Background        
         size = width, height = 640, 480
 
         pygame.init()            
@@ -112,7 +112,7 @@ class Breakout():
                 yspeed = verticalSpeed           
                 ballrect.center = width * random.random(), height / 3                                
                 if lives == 0:                    
-                    msg = pygame.font.Font(None,70).render("Game Over", True, (0,255,255), bgcolour)
+                    msg = pygame.font.Font(None,70).render("Game Over", True, (0,255,255), background)
                     msgrect = msg.get_rect()
                     msgrect = msgrect.move(width / 2 - (msgrect.center[0]), height / 3)
                     screen.blit(msg, msgrect)
@@ -131,7 +131,7 @@ class Breakout():
                                 if not (event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT):                                    
                                     restart = True      
                         if restart:                   
-                            screen.fill(bgcolour)
+                            screen.fill(background)
                             wall.build_wall(width)
                             lives = max_lives
                             score = 0
@@ -158,8 +158,8 @@ class Breakout():
                 wall.brickrect[index:index + 1] = []
                 score += 10
                           
-            screen.fill(bgcolour)
-            scoretext = pygame.font.Font(None,40).render(str(score), True, (0,255,255), bgcolour)
+            screen.fill(background)
+            scoretext = pygame.font.Font(None,40).render(str(score), True, (0,255,255), background)
             scoretextrect = scoretext.get_rect()
             scoretextrect = scoretextrect.move(width - scoretextrect.right, 0)
             screen.blit(scoretext, scoretextrect)
