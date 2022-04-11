@@ -187,7 +187,7 @@ class Wall():
         ypos = 60
         adj = 0
         self.brickrect = []
-        for i in range (0, 40):           
+        for i in range (0, 36):           
             if xpos > width:
                 if adj == 0:
                     adj = self.bricklength / 2
