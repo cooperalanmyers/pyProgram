@@ -10,7 +10,7 @@ class Game():
     
     def main(self):
         
-        # Setting Speeds
+        # Setting Speeds 
         __horizontalSpeed = 2
         __verticalSpeed= 2
         bat_speed = 40
