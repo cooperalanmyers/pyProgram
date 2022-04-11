@@ -83,7 +83,7 @@ class Game():
                         # Place New Ball
 
                 # If bat has hit the ball  
-                if ballrect.bottom >= batrect.top and ballrect.bottom <= batrect.bottom and ballrect.right >= batrect.left and ballrect.left <= batrect.right:
+                if (ballrect.bottom >= batrect.top and ballrect.bottom <= batrect.bottom and ballrect.right >= batrect.left and ballrect.left <= batrect.right):
                     yspeed = -yspeed                
                     offset = ballrect.center[0] - batrect.center[0]
                   
