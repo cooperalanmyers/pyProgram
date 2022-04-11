@@ -36,7 +36,7 @@ class Breakout():
         wall.build_wall(width)
 
         # Initialise ready for game loop
-        batrect = batrect.move((width / 2) - (batrect.right / 2), height - 20)
+        batrect = batrect.move((width / 2) - (batrect.right / 2), height)
         ballrect = ballrect.move(width / 2, height / 2)       
         xspeed = horizontalSpeed
         yspeed = verticalSpeed
