@@ -25,18 +25,12 @@ class Game():
         pygame.init()            
         screen = pygame.display.set_mode(size)
 
-        bat = pygame.image.load("GameBar.png").convert()
-        batrect = bat.get_rect()
-
-        ball = pygame.image.load("Ball.png").convert()
-        ballrect = ball.get_rect()        
         
-        wall = Wall()
+        
+        wall = Brick()
         wall.build_wall(width)
 
         # Initialise ready for game loop
-        batrect = batrect.move((width / 2) - (batrect.right / 2), height - 60)
-        ballrect = ballrect.move(width / 2, height / 2)       
         xspeed = horizontalSpeed
         yspeed = verticalSpeed
         lives = max_lives
@@ -175,12 +169,20 @@ class Game():
 class Overlay():
     
 class Paddle():
+    bat = pygame.image.load("GameBar.png").convert()
+    batrect = bat.get_rect()    
+            
+    batrect = batrect.move((width / 2) - (batrect.right / 2), height - 60)
 
+    
 class Ball():
+    ball = pygame.image.load("Ball.png").convert()
+    ballrect = ball.get_rect()    
+    
+    ballrect = ballrect.move(width / 2, height / 2)       
+
     
 class Brick():
-
-class Wall():
 
     def __init__(self):
         self.brick = pygame.image.load("brick.png").convert()
