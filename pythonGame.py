@@ -101,10 +101,8 @@ class Breakout():
             ballrect = ballrect.move(xspeed, yspeed)
             if ballrect.left < 0 or ballrect.right > width:
                 xspeed = -xspeed                
-                pong.play(0)            
             if ballrect.top < 0:
                 yspeed = -yspeed                
-                pong.play(0)               
 
             # check if ball has gone past bat - lose a life
             if ballrect.top > height:
@@ -144,11 +142,9 @@ class Breakout():
             
             if xspeed < 0 and ballrect.left < 0:
                 xspeed = -xspeed                                
-                pong.play(0)
 
             if xspeed > 0 and ballrect.right > width:
                 xspeed = -xspeed                               
-                pong.play(0)
            
             # check if ball has hit wall
             # if yes yhen delete brick and change ball direction
@@ -159,7 +155,6 @@ class Breakout():
                     xspeed = -xspeed
                 else:
                     yspeed = -yspeed                
-                pong.play(0)              
                 wall.brickrect[index:index + 1] = []
                 score += 10
                           
