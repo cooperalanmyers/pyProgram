@@ -36,7 +36,7 @@ class Breakout():
         wall.build_wall(width)
 
         # Initialise ready for game loop
-        batrect = batrect.move((width / 2) - (batrect.right / 2), height - 40)
+        batrect = batrect.move((width / 2) - (batrect.right / 2), height - 60)
         ballrect = ballrect.move(width / 2, height / 2)       
         xspeed = horizontalSpeed
         yspeed = verticalSpeed
@@ -187,7 +187,7 @@ class Wall():
         ypos = 60
         adj = 0
         self.brickrect = []
-        for i in range (0, 26):           
+        for i in range (0, 40):           
             if xpos > width:
                 if adj == 0:
                     adj = self.bricklength / 2
