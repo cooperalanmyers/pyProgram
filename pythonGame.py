@@ -23,8 +23,7 @@ class Breakout():
         size = width, height = 640, 480
 
         pygame.init()            
-        screen = pygame.display.set_mode(size)
-        #screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
+        screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
 
         bat = pygame.image.load("GameBar.png").convert()
         batrect = bat.get_rect()
