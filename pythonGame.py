@@ -7,7 +7,7 @@ import sys
 import pygame
 import random
 
-class Breakout():
+class Game():
     def main(self):
         
         # Setting Speeds
@@ -201,6 +201,6 @@ class Wall():
             xpos = xpos + self.bricklength
 
 if __name__ == '__main__':
-    br = Breakout()
+    br = Game()
     br.main()
    
