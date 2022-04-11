@@ -9,11 +9,16 @@ import random
 
 class Breakout():
     def main(self):
-        horizontalSpeed = 6
-        verticalSpeed= 6
-        max_lives = 5
-        bat_speed = 30
-        score = 0 
+        
+        # Setting Speeds
+        horizontalSpeed = 3
+        verticalSpeed= 3
+        bat_speed = 40
+
+        # Initialize Lives and Score        
+        max_lives = 3
+        score = 0
+        
         bgcolour = 0x2F, 0x4F, 0x4F  # darkslategrey        
         size = width, height = 640, 480
 
