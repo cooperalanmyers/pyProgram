@@ -19,14 +19,12 @@ class Game():
         max_lives = 3
         score = 0
         
+        # Setting Size and Background Color
         background = 0xFF, 0xFF, 0xFF  # White Background        
         size = width, height = 800, 800
-
         pygame.init()            
         screen = pygame.display.set_mode(size)
 
-        
-        
         wall = Brick()
         wall.build_wall(width)
 
@@ -36,11 +34,10 @@ class Game():
         lives = max_lives
         clock = pygame.time.Clock()
         pygame.key.set_repeat(1,30)       
-        pygame.mouse.set_visible(0)       # turn off mouse pointer
+        pygame.mouse.set_visible(0)       # Mouse is no longer appearing on game screen
 
-        while 1:
-
-            # 60 frames per second
+        while 1: # Always True
+            # Refresh Rate
             clock.tick(60)
 
             # process key presses
@@ -147,10 +144,7 @@ class Game():
                 score += 10
                           
             screen.fill(background)
-            scoretext = pygame.font.Font(None,40).render(str(score), True, (0,255,255), background)
-            scoretextrect = scoretext.get_rect()
-            scoretextrect = scoretextrect.move(width - scoretextrect.right, 0)
-            screen.blit(scoretext, scoretextrect)
+            
 
             for i in range(0, len(wall.brickrect)):
                 screen.blit(wall.brick, wall.brickrect[i])    
@@ -167,6 +161,16 @@ class Game():
             pygame.display.flip()
             
 class Overlay():
+    scoretext = pygame.font.Font(None,40).render(str(score), True, (0,255,255), background)
+    scoretextrect = scoretext.get_rect()
+    scoretextrect = scoretextrect.move(width - scoretextrect.right, 0)
+    screen.blit(scoretext, scoretextrect)
+    
+    livestext = pygame.font.Font(None,40).render(str(lives), True, (0,255,255), background)
+    livestextrect = livestext.get_rect()
+    livestextrect = livestextrect.move(width - livestextrect.right, 0)
+    screen.blit(livestext, livestextrect)
+    
     
 class Paddle():
     bat = pygame.image.load("GameBar.png").convert()
@@ -209,6 +213,8 @@ class Brick():
             self.brickrect[i] = self.brickrect[i].move(xpos, ypos)
             xpos = xpos + self.bricklength
 
+            
+# Statement to Run Game
 if __name__ == '__main__':
     start = Game()
     start.main()
