@@ -211,27 +211,27 @@ class Brick():
     def __init__(self):
         self.brick = pygame.image.load("brick.png").convert()
         brickrect = self.brick.get_rect()
-        
-        self.bricklength = brickrect.right - brickrect.left       
+                
         self.brickheight = brickrect.bottom - brickrect.top             
+        self.bricklength = brickrect.right - brickrect.left       
 
     def build_wall(self, width):        
-        xpos = 0
-        ypos = 60
+        x = 0
+        y = 60
         adjust = 0
         self.brickrect = []
         for i in range (0, 33):           
-            if xpos > width:
+            if x > width:
                 if adjust == 0:
                     adjust = self.bricklength / 2
                 else:
                     adjust = 0
-                xpos = -adjust
-                ypos += self.brickheight
+                x = -adjust
+                y += self.brickheight
                 
             self.brickrect.append(self.brick.get_rect())    
-            self.brickrect[i] = self.brickrect[i].move(xpos, ypos)
-            xpos = xpos + self.bricklength
+            self.brickrect[i] = self.brickrect[i].move(x, y)
+            x = x + self.bricklength
 
             
 # Statement to Run Game
