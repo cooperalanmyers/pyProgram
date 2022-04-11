@@ -74,7 +74,7 @@ class Breakout():
                 yspeed = -yspeed                
                 offset = ballrect.center[0] - batrect.center[0]
                 
-                ball = pygame.image.load("Ball2.png").convert()
+                ball = pygame.image.load("NewBall.png").convert()
                 # ball.set_colorkey((255, 255, 255))
                 ballrect = ball.get_rect()    
                 
