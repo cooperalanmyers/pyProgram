@@ -42,7 +42,7 @@ class Game():
         pygame.mouse.set_visible(0)
         
         # Sound
-        sound = pygame.mixer.Sound('Blip_1-Surround-147.wav')
+        sound = pygame.mixer.Sound('mixkit-acute-guitar-single-string-2325.wav')
         sound.set_volume(10)    
 
         # Always True
