@@ -41,6 +41,10 @@ class Game():
         # Mouse is no longer appearing on game screen
         pygame.mouse.set_visible(0)
         
+        Overlay()
+        Paddle()
+        Ball()
+        
         # Sound
         
         sound = pygame.mixer.Sound('mixkit-futuristic-space-war-percussion-2787.wav')
@@ -238,4 +242,3 @@ class Brick():
 if __name__ == '__main__':
     start = Game()
     start.main()
-   
