@@ -218,15 +218,15 @@ class Brick():
     def build_wall(self, width):        
         xpos = 0
         ypos = 60
-        adj = 0
+        adjust = 0
         self.brickrect = []
         for i in range (0, 33):           
             if xpos > width:
-                if adj == 0:
-                    adj = self.bricklength / 2
+                if adjust == 0:
+                    adjust = self.bricklength / 2
                 else:
-                    adj = 0
-                xpos = -adj
+                    adjust = 0
+                xpos = -adjust
                 ypos += self.brickheight
                 
             self.brickrect.append(self.brick.get_rect())    
