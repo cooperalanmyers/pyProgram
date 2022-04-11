@@ -40,6 +40,10 @@ class Game():
         
         # Mouse is no longer appearing on game screen
         pygame.mouse.set_visible(0)
+        
+        # Sound
+        sound = pygame.mixer.Sound('Blip_1-Surround-147.wav')
+        sound.set_volume(10)    
 
         # Always True
         while 1: 
