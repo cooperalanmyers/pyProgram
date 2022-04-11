@@ -184,11 +184,14 @@ class Game():
             pygame.display.flip()
             
 class Overlay():
+    
+    # Score overlay displayed on top right of screen
     scoretext = pygame.font.Font(None,40).render(str(score), True, (0,255,255), background)
     scoretextrect = scoretext.get_rect()
     scoretextrect = scoretextrect.move(width - scoretextrect.right, 0)
     screen.blit(scoretext, scoretextrect)
     
+    # Lives remaining overlay displayed on top right of screen
     livestext = pygame.font.Font(None,40).render(str(lives), True, (0,255,255), background)
     livestextrect = livestext.get_rect()
     livestextrect = livestextrect.move(width - livestextrect.right, 0)
@@ -196,6 +199,8 @@ class Overlay():
     
     
 class Paddle():
+    
+    # Loading paddle image
     bat = pygame.image.load("GameBar.png").convert()
     batrect = bat.get_rect()    
             
@@ -204,6 +209,8 @@ class Paddle():
 
     
 class Ball():
+    
+    # Loading ball image
     ball = pygame.image.load("Ball.png").convert()
     ballrect = ball.get_rect()    
     
@@ -213,16 +220,24 @@ class Ball():
 class Brick():
 
     def __init__(self):
+        # Loading up image of bricks
         self.brick = pygame.image.load("brick.png").convert()
         brickrect = self.brick.get_rect()
                 
+        # Setting brick height and length
         self.brickheight = brickrect.bottom - brickrect.top             
         self.bricklength = brickrect.right - brickrect.left       
 
     def build_wall(self, width):        
+        
+        # X and Y coordinates
         x = 0
+        y = 0
         y = 60
+        
+        # Adjusting value
         adjust = 0
+        # Creating a new set of values
         self.brickrect = []
         for i in range (0, 33):           
             if x > width:
@@ -230,14 +245,15 @@ class Brick():
                     adjust = self.bricklength / 2
                 else:
                     adjust = 0
+                    
                 x = -adjust
                 y += self.brickheight
-                
+            
+            # Appending each brick to build a wall of defense
             self.brickrect.append(self.brick.get_rect())    
             self.brickrect[i] = self.brickrect[i].move(x, y)
             x = x + self.bricklength
 
-            
 # Statement to Run Game
 if __name__ == '__main__':
     start = Game()
