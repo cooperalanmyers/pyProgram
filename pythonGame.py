@@ -20,7 +20,7 @@ class Breakout():
         score = 0
         
         background = 0xFF, 0xFF, 0xFF  # White Background        
-        size = width, height = 800, 600
+        size = width, height = 800, 800
 
         pygame.init()            
         screen = pygame.display.set_mode(size)
@@ -178,6 +178,7 @@ class Wall():
     def __init__(self):
         self.brick = pygame.image.load("brick.png").convert()
         brickrect = self.brick.get_rect()
+        
         self.bricklength = brickrect.right - brickrect.left       
         self.brickheight = brickrect.bottom - brickrect.top             
 
@@ -186,7 +187,7 @@ class Wall():
         ypos = 60
         adj = 0
         self.brickrect = []
-        for i in range (0, 52):           
+        for i in range (0, 26):           
             if xpos > width:
                 if adj == 0:
                     adj = self.bricklength / 2
