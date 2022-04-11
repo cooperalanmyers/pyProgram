@@ -2,22 +2,25 @@
 # Python Breakout Program CIS 343
 # 4/10/22
 
-
 import sys
 import pygame
 import random
 
 class Game():
+    
     def main(self):
         
         # Setting Speeds
-        horizontalSpeed = 2
-        verticalSpeed= 2
+        __horizontalSpeed = 2
+        __verticalSpeed= 2
         bat_speed = 40
+        xspeed = __horizontalSpeed
+        yspeed = __verticalSpeed
 
         # Initialize Lives and Score        
-        max_lives = 3
+        __max_lives = 3
         score = 0
+        lives = __max_lives
         
         # Setting Size and Background Color
         background = 0xFF, 0xFF, 0xFF  # White Background        
@@ -25,22 +28,26 @@ class Game():
         pygame.init()            
         screen = pygame.display.set_mode(size)
 
+        # Creating wall object and using helper method to build
         wall = Brick()
         wall.build_wall(width)
 
-        # Initialise ready for game loop
-        xspeed = horizontalSpeed
-        yspeed = verticalSpeed
-        lives = max_lives
+        # Setting up clock
         clock = pygame.time.Clock()
-        pygame.key.set_repeat(1,30)       
-        pygame.mouse.set_visible(0)       # Mouse is no longer appearing on game screen
+        
+        # If a key is held down it will repeat the true value passed
+        pygame.key.set_repeat(1,30)
+        
+        # Mouse is no longer appearing on game screen
+        pygame.mouse.set_visible(0)
 
-        while 1: # Always True
+        # Always True
+        while 1: 
+            
             # Refresh Rate
             clock.tick(60)
 
-            # process key presses
+            # Key Clicks
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
@@ -56,7 +63,7 @@ class Game():
                         if (batrect.right > width):                            
                             batrect.right = width
 
-            # check if bat has hit ball    
+            # If bat has hit the ball  
             if ballrect.bottom >= batrect.top and \
                ballrect.bottom <= batrect.bottom and \
                ballrect.right >= batrect.left and \
@@ -121,7 +128,7 @@ class Game():
                         if restart:                   
                             screen.fill(background)
                             wall.build_wall(width)
-                            lives = max_lives
+                            lives = __max_lives
                             score = 0
                             break
             
@@ -152,8 +159,8 @@ class Game():
             # if wall completely gone then rebuild it
             if wall.brickrect == []:              
                 wall.build_wall(width)                
-                xspeed = horizontalSpeed
-                yspeed = verticalSpeed               
+                xspeed = __horizontalSpeed
+                yspeed = __verticalSpeed               
                 ballrect.center = width / 2, height / 3
          
             screen.blit(ball, ballrect)
