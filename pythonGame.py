@@ -42,9 +42,15 @@ class Game():
         pygame.mouse.set_visible(0)
         
         # Sound
-        sound = pygame.mixer.Sound('mixkit-acute-guitar-single-string-2325.wav')
-        sound.set_volume(10)    
+        
+        sound = pygame.mixer.Sound('mixkit-futuristic-space-war-percussion-2787.wav')
+        sound.set_volume(10)
+        sound.play(0)
 
+        hitSound = pygame.mixer.Sound('mixkit-acute-guitar-single-string-2325.wav')
+        hitSound.set_volume(10)
+        #hitSound.play(0)
+        
         # Always True
         while 1: 
             
