@@ -201,6 +201,6 @@ class Wall():
             xpos = xpos + self.bricklength
 
 if __name__ == '__main__':
-    br = Game()
-    br.main()
+    start = Game()
+    start.main()
    
