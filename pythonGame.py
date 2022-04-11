@@ -29,7 +29,6 @@ class Game():
         batrect = bat.get_rect()
 
         ball = pygame.image.load("Ball.png").convert()
-        # ball.set_colorkey((255, 255, 255))
         ballrect = ball.get_rect()        
         
         wall = Wall()
@@ -172,6 +171,14 @@ class Game():
             screen.blit(ball, ballrect)
             screen.blit(bat, batrect)
             pygame.display.flip()
+            
+class Overlay():
+    
+class Paddle():
+
+class Ball():
+    
+class Brick():
 
 class Wall():
 
