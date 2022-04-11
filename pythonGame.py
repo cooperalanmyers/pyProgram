@@ -62,6 +62,9 @@ class Game():
                         batrect = batrect.move(bat_speed, 0)
                         if (batrect.right > width):                            
                             batrect.right = width
+                    if event.key == pygame.K_DOWN:
+                        # Place New Ball
+
 
             # If bat has hit the ball  
             if ballrect.bottom >= batrect.top and \
