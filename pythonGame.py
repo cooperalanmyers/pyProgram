@@ -82,11 +82,11 @@ class Game():
 
            # If bat has hit the ball  
            if ballrect.bottom >= batrect.top and \
-               ballrect.bottom <= batrect.bottom and \
-               ballrect.right >= batrect.left and \
-               ballrect.left <= batrect.right:
-                yspeed = -yspeed                
-                offset = ballrect.center[0] - batrect.center[0]
+              ballrect.bottom <= batrect.bottom and \
+              ballrect.right >= batrect.left and \
+              ballrect.left <= batrect.right:
+              yspeed = -yspeed                
+              offset = ballrect.center[0] - batrect.center[0]
                   
                 
                 # offset > 0 means ball has hit RHS of bat                   
