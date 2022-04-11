@@ -55,6 +55,9 @@ class Game():
         hitSound.set_volume(10)
         #hitSound.play(0)
         
+        batrect = batrect.move((width / 2) - (batrect.right / 2), height - 60)
+        ballrect = ballrect.move(width / 2, height / 2) 
+        
         # Always True
         while 1: 
             
@@ -196,14 +199,15 @@ class Paddle():
     bat = pygame.image.load("GameBar.png").convert()
     batrect = bat.get_rect()    
             
-    batrect = batrect.move((width / 2) - (batrect.right / 2), height - 60)
+    #batrect = batrect.move((width / 2) - (batrect.right / 2), height - 60)
+    #ballrect = ballrect.move(width / 2, height / 2)       
 
     
 class Ball():
     ball = pygame.image.load("Ball.png").convert()
     ballrect = ball.get_rect()    
     
-    ballrect = ballrect.move(width / 2, height / 2)       
+    #ballrect = ballrect.move(width / 2, height / 2)       
 
     
 class Brick():
