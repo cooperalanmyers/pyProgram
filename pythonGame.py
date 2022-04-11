@@ -73,7 +73,6 @@ class Breakout():
                ballrect.right >= batrect.left and \
                ballrect.left <= batrect.right:
                 yspeed = -yspeed                
-                pong.play(0)                
                 offset = ballrect.center[0] - batrect.center[0]
                 
                 ball = pygame.image.load("Ball2.png").convert()
