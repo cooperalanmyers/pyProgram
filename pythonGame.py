@@ -11,19 +11,19 @@ class Breakout():
     def main(self):
         
         # Setting Speeds
-        horizontalSpeed = 3
-        verticalSpeed= 3
+        horizontalSpeed = 2
+        verticalSpeed= 2
         bat_speed = 40
 
         # Initialize Lives and Score        
         max_lives = 3
         score = 0
         
-        background = 0xFF, 0x00, 0x00  # Red Background        
-        size = width, height = 640, 480
+        background = 0xFF, 0xFF, 0xFF  # White Background        
+        size = width, height = 800, 600
 
         pygame.init()            
-        screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
+        screen = pygame.display.set_mode(size)
 
         bat = pygame.image.load("GameBar.png").convert()
         batrect = bat.get_rect()
